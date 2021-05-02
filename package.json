@@ -1,0 +1,54 @@
+{
+  "name": "react-project",
+  "version": "0.0.1",
+  "description": "My template for react projects",
+  "main": "package.json",
+  "scripts": {
+    "start": "webpack --config=./webpack.dev.js",
+    "dev": " npm start",
+    "build": "webpack --config=./webpack.prod.js",
+    "serve": "node test-server.js"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "custom builder"
+  ],
+  "author": {
+    "name": "Evgeny Leukhin",
+    "email": "EvgenyLeukhin@yandex.ru",
+    "url": "https://github.com/EvgenyLeukhin"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EvgenyLeukhin/react-project.git",
+    "private": true
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.10.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "chalk": "^4.1.1",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "compression": "^1.7.4",
+    "compression-webpack-plugin": "^7.1.2",
+    "express": "^4.17.1",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0"
+  },
+  "browserslist": [
+    "> 2%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
