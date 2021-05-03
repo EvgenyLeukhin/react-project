@@ -22,6 +22,10 @@ module.exports = {
     filename: 'bundle-[hash:8].js',
   },
 
+  resolve: {
+    extensions: ['.js', '.jsx', '.tsx'],
+  },
+
   // FILES
   module: {
     rules: [

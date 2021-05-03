@@ -31,6 +31,11 @@ module.exports = {
     overlay: { warnings: false, errors: true },
   },
 
+  // to import without endings
+  resolve: {
+    extensions: ['.js', '.jsx', '.tsx'],
+  },
+
   // FILES
   module: {
     rules: [
