@@ -1,5 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const paths = {
@@ -28,5 +29,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new CompressionPlugin({ algorithm: 'gzip' }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      filename: 'index.html',
+      inject: 'body', // head
+    })
   ],
 }
