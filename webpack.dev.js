@@ -38,6 +38,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'React project',
+      // favicon: 'src/favicon.png',
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body', // head
