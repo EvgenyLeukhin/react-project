@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // PATHS
 const paths = {
-  SRC: path.resolve(__dirname, 'src/App.jsx'),
+  SRC: path.resolve(__dirname, 'src/main.js'),
   DIST: path.resolve(__dirname, 'dist')
 };
 
@@ -28,10 +28,7 @@ module.exports = {
     // contentBase: paths.SRC,
     // host: '0.0.0.0',
     port: 8888,
-    overlay: {
-      warnings: false,
-      errors: true
-    },
+    overlay: { warnings: false, errors: true },
   },
 
   // FILES

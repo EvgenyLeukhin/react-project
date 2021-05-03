@@ -1,9 +1,16 @@
-// mini-css-extract-plugin
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-  <h1>Hello, React!</h1>,
+const styles = {
+  backgroundColor: 'cyan',
+  color: 'maroon',
+}
 
-  document.getElementById('react-project')
-);
+const App = () => {
+  return (
+    <>
+      <h1>Hello, <span style={styles}>React!</span></h1>
+    </>
+  )
+}
+
+export default App;

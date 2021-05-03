@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const paths = {
-  SRC: path.resolve(__dirname, 'src/App.jsx'),
+  SRC: path.resolve(__dirname, 'src/main.js'),
   DIST: path.resolve(__dirname, 'dist')
 };
 
