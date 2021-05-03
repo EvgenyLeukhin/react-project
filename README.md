@@ -3,7 +3,7 @@ My custom template for react projects withou create-react-app or react-scripts
 
 [Repo-link](https://github.com/EvgenyLeukhin/)
 
-[Demo-link](https://github.com/EvgenyLeukhin/)
+[Demo-link](http://evgenyleukhin.github.io/react-project/)
 ***
 ## Install node packages
 ### With npm 

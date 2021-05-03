@@ -1,16 +1,27 @@
+// IMPORTS FOR DEVELOPMENT
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// PATHS
 const paths = {
-  SRC: path.resolve(__dirname, 'src/App.js'),
+  SRC: path.resolve(__dirname, 'src/App.jsx'),
   DIST: path.resolve(__dirname, 'dist')
 };
 
 module.exports = {
+  // BASIC CONFIG
   mode: 'development',
   watchOptions: { ignored: /node_modules/ },
   devtool: 'cheap-module-source-map', // source maps 
   target: 'web', // project target, connects with browserslist
   entry: paths.SRC,
+  output: {
+    path: paths.DIST,
+    publicPath: '', // src="publicPath/bundle.js"
+    filename: 'bundle.js',
+  },
+
+  // WEBPACK-DEV-SERVER
   devServer: {
     open: 'Google Chrome',
     compress: true,
@@ -22,11 +33,8 @@ module.exports = {
       errors: true
     },
   },
-  output: {
-    path: paths.DIST,
-    publicPath: '', // src="publicPath/bundle.js"
-    filename: 'bundle.js',
-  },
+
+  // FILES
   module: {
     rules: [
       {
@@ -36,9 +44,11 @@ module.exports = {
       },
     ]
   },
+
+  // PLUGINS
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'React project',
+      title: 'React project - Development',
       // favicon: 'src/favicon.png',
       template: 'src/index.html',
       filename: 'index.html',
