@@ -7,8 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const paths = {
-  SRC: path.resolve(__dirname, 'src/main.js'),
-  DIST: path.resolve(__dirname, 'dist')
+  SRC: path.resolve(__dirname, 'src/App.jsx'),
+  DIST: path.resolve(__dirname, 'dist'),
 };
 
 module.exports = {
@@ -32,9 +32,9 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: 'babel-loader',
       },
-    ]
+    ],
   },
 
   // PLUGINS
@@ -47,6 +47,6 @@ module.exports = {
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body', // head
-    })
+    }),
   ],
-}
+};

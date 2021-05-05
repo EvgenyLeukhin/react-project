@@ -23,6 +23,9 @@ Run webpack-dev-server with hot-reloading
 ***
 ## Deploy to github-pages
 ```npm run deploy || yarn deploy```
+
+## ESLint
+```npx eslint someFile.jsx```
 ***
 ## Packages
 
@@ -40,6 +43,18 @@ Run webpack-dev-server with hot-reloading
 
 ### Babel
 ```@babel/core, @babel/preset-env, @babel/preset-react, babel-loader```
+
+### ESLint
+
+```npm i --save-dev eslint```
+```npx eslint --init``` 
+
+* To check syntax, find problems, and enforce code style 
+* JavaScript modules 
+* React 
+* TypeScript - No 
+* Browser 
+* Popular -> Airbnb -> json);
 
 ### Styles
 ```...```

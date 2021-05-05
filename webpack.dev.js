@@ -4,15 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // PATHS
 const paths = {
-  SRC: path.resolve(__dirname, 'src/main.js'),
-  DIST: path.resolve(__dirname, 'dist')
+  SRC: path.resolve(__dirname, 'src/App.jsx'),
+  DIST: path.resolve(__dirname, 'dist'),
 };
 
 module.exports = {
   // BASIC CONFIG
   mode: 'development',
   watchOptions: { ignored: /node_modules/ },
-  devtool: 'cheap-module-source-map', // source maps 
+  devtool: 'cheap-module-source-map', // source maps
   target: 'web', // project target, connects with browserslist
   entry: paths.SRC,
   output: {
@@ -42,9 +42,9 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: 'babel-loader',
       },
-    ]
+    ],
   },
 
   // PLUGINS
@@ -55,6 +55,6 @@ module.exports = {
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body', // head
-    })
-  ]
-}
+    }),
+  ],
+};
