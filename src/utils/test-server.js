@@ -5,7 +5,7 @@ const compression = require('compression');
 
 const server = express();
 const PORT = 8889;
-const PATH = path.join(__dirname, './dist');
+const PATH = path.join(__dirname, '../../dist');
 
 server.use(compression());
 server.use(express.static(PATH));
@@ -15,5 +15,5 @@ server.listen(PORT, () => console.log(`
   ---------------------------------------
   [MODE]       ${chalk.yellow.bold('TEST SERVER')}
   [Folder]     Serving prodiction files from:' ${chalk.cyan('./dist')}
-  [URL]        ${chalk.blue.underline.bold(`http://localhost:' ${PORT}`)}
+  [URL]        ${chalk.blue.underline.bold(`http://localhost:${PORT}`)}
 `));

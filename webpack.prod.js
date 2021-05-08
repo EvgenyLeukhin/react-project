@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const paths = {
-  SRC: path.resolve(__dirname, 'src/App.jsx'),
+  SRC: path.resolve(__dirname, 'src/App.tsx'),
   DIST: path.resolve(__dirname, 'dist'),
 };
 
@@ -23,14 +23,14 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.tsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
 
   // FILES
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: 'babel-loader',
       },

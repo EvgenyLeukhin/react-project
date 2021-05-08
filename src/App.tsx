@@ -1,23 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Title from './components/Title';
+
 const styles = {
   backgroundColor: 'cyan',
   color: 'maroon',
 };
 
-const App = () => (
+const App: React.FC  = () => (
   <>
-    <h1>
-      Hello,&nbsp;
-      <span style={styles}>React!</span>
-    </h1>
+    <Title titleText="Hello, TypeScript!" style={styles} />
   </>
 );
 
 ReactDOM.render(
   <App />,
-  document.getElementById('react-project'),
+  document.getElementById('root'),
 );
 
 export default App;
