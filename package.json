@@ -14,7 +14,8 @@
     "eslint-fix": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "install-packages": "npm i",
-    "delete-packages": "rm -rf node-modules/"
+    "delete-packages": "rm -rf node-modules/",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "react",
@@ -66,6 +67,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
     "prettier": "^2.2.1",
     "style-loader": "^2.0.0",
     "typescript": "^4.2.4",
@@ -78,5 +80,10 @@
     "defaults",
     "not IE 11",
     "maintained node versions"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
+  }
 }

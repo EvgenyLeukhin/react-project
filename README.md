@@ -25,7 +25,7 @@ Run webpack-dev-server with hot-reloading
 ```npm run deploy || yarn deploy```
 
 ## ESLint
-```npx eslint someFile.jsx```
+```eslint someFile.jsx```
 ***
 ## Packages
 
@@ -42,22 +42,37 @@ Run webpack-dev-server with hot-reloading
 ```...```
 
 ### Babel
-```@babel/core, @babel/preset-env, @babel/preset-react, babel-loader```
+```@babel/core, @babel/preset-env, @babel/preset-react, @babel/preset-typescript, babel-loader```
 
-### ESLint with clean jsx (without TypeScript)
+### TypeScript
+```typescript, @typescript-eslint/eslint-plugin, @typescript-eslint/parser```
 
+### ESLint
+
+```npm i -g eslint```
 ```npm i --save-dev eslint```
 ```npx eslint --init``` 
 
 * To check syntax, find problems, and enforce code style 
 * JavaScript modules 
 * React 
-* TypeScript - No 
+* TypeScript - Yes 
 * Browser 
 * Popular -> Airbnb -> json;
 
+### Prettier
+```prettier``` with .prettierrc.js
+
+### Husky and Lint-stages
+```husky, lint-stages```
+
+* npm i -g husky
+* husky init
+* husky install
+* npm i --save-dev husky
+
 ### Styles
-```...```
+```style-loader, css-loader```
 
 ### Images
 ```...```
