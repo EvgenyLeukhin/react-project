@@ -75,10 +75,10 @@ Run webpack-dev-server with hot-reloading
 ```style-loader, css-loader```
 
 ### Images
-```...```
+```...``` later
 
 ### Fonts, files
-```...```
+```...``` later
 
 ### Local testing server
 ```express, chalk, compression```
