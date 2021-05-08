@@ -63,13 +63,16 @@ Run webpack-dev-server with hot-reloading
 ### Prettier
 ```prettier``` with .prettierrc.js
 
-### Husky and Lint-stages
+### Husky and Lint-stages 
 ```husky, lint-stages```
 
-* npm i -g husky
-* husky init
-* husky install
+[how-to-install](https://stackoverflow.com/questions/50048717/lint-staged-not-running-on-precommit)
+
+* npm install -D husky
+* npm set-script prepare "husky install" && npm run prepare
+* npx husky add .husky/pre-commit "npx lint-staged"
 * npm i --save-dev husky
+* git commit -m "added husky and lint-stagged"
 
 ### Styles
 ```style-loader, css-loader```

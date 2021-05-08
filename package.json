@@ -15,7 +15,8 @@
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "install-packages": "npm i",
     "delete-packages": "rm -rf node-modules/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "keywords": [
     "react",
@@ -67,7 +68,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.1",
-    "husky": "^6.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^11.0.0",
     "prettier": "^2.2.1",
     "style-loader": "^2.0.0",
     "typescript": "^4.2.4",
@@ -85,5 +87,13 @@
     "hooks": {
       "pre-commit": "npm run test"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   }
 }
