@@ -10,10 +10,12 @@ const PATH = path.join(__dirname, '../../dist');
 server.use(compression());
 server.use(express.static(PATH));
 
-server.listen(PORT, () => console.log(`
-  ${chalk.green('Express-server is running up ...')}
-  ---------------------------------------
-  [MODE]       ${chalk.yellow.bold('TEST SERVER')}
-  [Folder]     Serving prodiction files from:' ${chalk.cyan('./dist')}
-  [URL]        ${chalk.blue.underline.bold(`http://localhost:${PORT}`)}
-`));
+server.listen(PORT, () =>
+  console.log(`
+    ${chalk.green('Express-server is running up ...')}
+    ---------------------------------------
+    [MODE]       ${chalk.yellow.bold('TEST SERVER')}
+    [Folder]     Serving prodiction files from:' ${chalk.cyan('./dist')}
+    [URL]        ${chalk.blue.underline.bold(`http://localhost:${PORT}`)}
+  `)
+);
