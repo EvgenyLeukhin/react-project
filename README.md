@@ -28,6 +28,7 @@ Run webpack-dev-server with hot-reloading
 ```eslint someFile.jsx```
 ***
 ## Packages
+```browser-sync```
 
 ### Webpack 5
 ```webpack, webpack-cli, webpack-dev-server```
@@ -52,6 +53,7 @@ Run webpack-dev-server with hot-reloading
 ```npm i -g eslint```
 ```npm i --save-dev eslint```
 ```npx eslint --init``` 
+```eslint-loader``` (to show errors in the console) 
 
 * To check syntax, find problems, and enforce code style 
 * JavaScript modules 

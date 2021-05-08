@@ -15,8 +15,7 @@
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "install-packages": "npm i",
     "delete-packages": "rm -rf node-modules/",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "adaptive-test": "browser-sync start -s dist"
   },
   "keywords": [
     "react",
@@ -54,6 +53,7 @@
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
     "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
     "chalk": "^4.1.1",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "compression": "^1.7.4",
@@ -62,6 +62,7 @@
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
