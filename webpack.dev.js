@@ -1,6 +1,7 @@
 // IMPORTS FOR DEVELOPMENT
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const ESLintPlugin = require('eslint-webpack-plugin');
 
 // PATHS
 const paths = {
@@ -43,9 +44,18 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        loader: 'eslint-loader',
+        options: {
+          overlay: true,
+        },
+      },
+      {
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
       },
       {
         test: /\.css$/,
