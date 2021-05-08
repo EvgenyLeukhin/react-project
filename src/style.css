@@ -1,6 +1,2 @@
 /* bootstrap-reboot */
 @import '~bootstrap-reboot/dist/reboot.css';
-
-body {
-  color: maroon;
-}
