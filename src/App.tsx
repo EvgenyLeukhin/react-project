@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 import Title from './components/Title';
 
-// import css-file (will inject in <style> tag)
-import 'Styles/bootstrap-reboot.css';
+// import global css file
+import './style.css';
 
 // in js styles
 const styles = {
