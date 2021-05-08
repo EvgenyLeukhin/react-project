@@ -2,7 +2,10 @@ import React from 'react';
 
 interface Props {
   titleText: string;
-  style: {};
+  style: {
+    backgroundColor: string;
+    color: string;
+  };
 }
 
 const BackButton: React.FC<Props> = ({ titleText, style }: Props) => (
