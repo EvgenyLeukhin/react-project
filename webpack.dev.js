@@ -34,6 +34,9 @@ module.exports = {
   // to import without endings
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      Styles: path.resolve(__dirname, 'src', 'assets', 'css'),
+    },
   },
 
   // FILES
@@ -43,6 +46,10 @@ module.exports = {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },

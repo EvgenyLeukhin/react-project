@@ -4,7 +4,7 @@ interface Props {
   titleText: string;
   style: {
     backgroundColor: string;
-    color: string;
+    color?: string;
   };
 }
 

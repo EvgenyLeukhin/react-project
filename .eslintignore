@@ -1,3 +1,6 @@
+dist/
+node-modules/
+
 src/utils/test-server.js
 *.css
 *.svg
