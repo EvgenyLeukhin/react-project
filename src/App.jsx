@@ -9,7 +9,7 @@ const styles = {
 const App = () => (
   <>
     <h1>
-      Hello,
+      Hello,&nbsp;
       <span style={styles}>React!</span>
     </h1>
   </>
