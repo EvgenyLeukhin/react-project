@@ -44,7 +44,7 @@ Run webpack-dev-server with hot-reloading
 ### Babel
 ```@babel/core, @babel/preset-env, @babel/preset-react, babel-loader```
 
-### ESLint
+### ESLint with clean jsx (without TypeScript)
 
 ```npm i --save-dev eslint```
 ```npx eslint --init``` 
@@ -54,7 +54,7 @@ Run webpack-dev-server with hot-reloading
 * React 
 * TypeScript - No 
 * Browser 
-* Popular -> Airbnb -> json);
+* Popular -> Airbnb -> json;
 
 ### Styles
 ```...```
