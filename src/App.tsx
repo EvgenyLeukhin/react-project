@@ -8,7 +8,7 @@ const styles = {
   color: 'maroon',
 };
 
-const App: React.FC  = () => (
+const App: React.FC = () => (
   <>
     <Title titleText="Hello, TypeScript!" style={styles} />
   </>

@@ -1,0 +1,37 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended", 
+        "plugin:@typescript-eslint/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "max-len": ["warn", { "code": 80 }], // max-length
+        "import/no-extraneous-dependencies": 0, // packages dep and devDep
+        "no-console": 1, // console
+        "import/extensions": 0, // fix missing extantion
+        "no-use-before-define": "off", // import React from 'react' error
+        "@typescript-eslint/no-use-before-define": ["error"], // import React from 'react' error
+        "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ]  // for eslinit understands tsx
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {} // fix unable to resolve path
+        }
+    }
+}

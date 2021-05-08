@@ -5,10 +5,8 @@ interface Props {
   style: {};
 }
 
-const BackButton: React.FC<Props> = ({ titleText, style }: Props) => {
-  return (
-    <h1 style={style}>{titleText}</h1>
-  );
-};
+const BackButton: React.FC<Props> = ({ titleText, style }: Props) => (
+  <h1 style={style}>{titleText}</h1>
+);
 
 export default BackButton;
