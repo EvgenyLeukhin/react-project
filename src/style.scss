@@ -1,0 +1,13 @@
+$color: gray;
+
+.app-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+p {
+  text-align: center;
+  color: $color;
+  text-decoration: underline;
+  margin-bottom: 0;
+}

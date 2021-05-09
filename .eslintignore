@@ -1,5 +1,6 @@
 dist/
 node-modules/
+postcss.config.js
 
 src/utils/test-server.js
 *.css

@@ -21,7 +21,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "max-len": ["warn", { "code": 80 }], // max-length
+        "max-len": ["warn", { "code": 100 }], // max-length
         "import/no-extraneous-dependencies": 0, // packages dep and devDep
         "import/no-unresolved": 0, // packages dep and devDep
         "no-console": 1, // console

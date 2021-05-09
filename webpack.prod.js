@@ -5,6 +5,8 @@ const WebpackBar = require('webpackbar');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const paths = {
   SRC: path.resolve(__dirname, 'src/App.tsx'),
@@ -38,9 +40,17 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.(sa|sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
+    ],
+  },
+
+  // optimization
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
     ],
   },
 
@@ -55,5 +65,7 @@ module.exports = {
       filename: 'index.html',
       inject: 'body', // head
     }),
+     // css bundle
+    new MiniCssExtractPlugin({ filename: 'bundle-[hash:8].css' }),
   ],
 };
