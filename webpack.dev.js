@@ -52,6 +52,15 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: 'fonts/[name].[ext]' }
+          }
+        ]
+      },
     ],
   },
 
