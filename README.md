@@ -27,10 +27,10 @@ Run webpack-dev-server with hot-reloading
 ## ESLint
 ```eslint someFile.jsx```
 ***
-## Packages
-```browser-sync```
-
 ### Webpack 5
+
+Errors overlay of webpack-dev-server doesn't work '(
+
 ```webpack, webpack-cli, webpack-dev-server```
 
 ### Webpack plugins
@@ -40,7 +40,7 @@ Run webpack-dev-server with hot-reloading
 ```react, react-dom```
 
 ### Redux and API
-```...```
+```...``` later
 
 ### Babel
 ```@babel/core, @babel/preset-env, @babel/preset-react, @babel/preset-typescript, babel-loader```
@@ -83,10 +83,10 @@ Run webpack-dev-server with hot-reloading
 ```...``` later
 
 ### Fonts, files
-```...``` later
+```file-loader```
 
 ### Local testing server
-```express, chalk, compression```
+```express, chalk, compression, browser-sync```
 
 ### Demo
 ```gh-pages```

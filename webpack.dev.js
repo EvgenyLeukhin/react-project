@@ -43,6 +43,7 @@ module.exports = {
   // FILES
   module: {
     rules: [
+      // JS
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
@@ -52,6 +53,8 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+
+      // FONTS
       {
         test: /\.(eot|ttf|woff|woff2)$/,
         use: [
