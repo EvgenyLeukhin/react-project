@@ -25,35 +25,34 @@ Run webpack-dev-server with hot-reloading
 ```npm run deploy || yarn deploy```
 
 ## ESLint
-```eslint someFile.jsx```
+```eslint someFile.jsx``` - Check some file
+```npm run eslint-find``` - Check all files inside src/ directory
+```npm run eslint-fix``` - Fix all warnings inside src/ directory
+
 ***
+
+## Packages
+
 ### Webpack 5
 
-Errors overlay of webpack-dev-server doesn't work '(
-
-```webpack, webpack-cli, webpack-dev-server```
+```webpack, webpack-cli, webpack-dev-server@4.0.0-beta.3```
 
 ### Webpack plugins
 ```webpackbar, html-webpack-plugin, compression-webpack-plugin, clean-webpack-plugin```
-
-### React 17
-```react, react-dom```
-
-### Redux and API
-```...``` later
 
 ### Babel
 ```@babel/core, @babel/preset-env, @babel/preset-react, @babel/preset-typescript, babel-loader```
 
 ### TypeScript
-```typescript, @typescript-eslint/eslint-plugin, @typescript-eslint/parser```
+```typescript, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @types/react, @types/react-dom```
 
 ### ESLint
+
+```eslint, eslint-config-airbnb, eslint-import-resolver-typescript, eslint-plugin-import, eslint-plugin-jsx-a11y, eslint-plugin-react, eslint-plugin-react-hooks, eslint-webpack-plugin, @typescript-eslint/eslint-plugin, @typescript-eslint/parser```
 
 ```npm i -g eslint```
 ```npm i --save-dev eslint```
 ```npx eslint --init``` 
-```eslint-loader``` (to show errors in the console) 
 
 * To check syntax, find problems, and enforce code style 
 * JavaScript modules 
@@ -66,7 +65,7 @@ Errors overlay of webpack-dev-server doesn't work '(
 ```prettier``` with .prettierrc.js
 
 ### Husky and Lint-stages 
-```husky, lint-stages```
+```husky, lint-staged```
 
 [how-to-install](https://stackoverflow.com/questions/50048717/lint-staged-not-running-on-precommit)
 
@@ -76,8 +75,14 @@ Errors overlay of webpack-dev-server doesn't work '(
 * npm i --save-dev husky
 * git commit -m "added husky and lint-stagged"
 
+### React 17
+```react, react-dom```
+
+### Redux and API
+```...``` later
+
 ### Styles
-```style-loader, css-loader```
+```autoprefixer, css-loader, css-minimizer-webpack-plugin, cssnano, mini-css-extract-plugin, postcss-loader, sass, sass-loader, style-loader```
 
 ### Images
 ```...``` later
