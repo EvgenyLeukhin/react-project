@@ -24,12 +24,9 @@ module.exports = {
 
   // WEBPACK-DEV-SERVER
   devServer: {
-    open: 'Google Chrome',
+    open: true,
     compress: true,
-    // contentBase: paths.SRC,
-    // host: '0.0.0.0',
     port: 8888,
-    overlay: { warnings: false, errors: true },
   },
 
   // to import without endings
