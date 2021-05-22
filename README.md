@@ -1,8 +1,8 @@
 # react-project
 
-react-project             |  developer
+without this template      |  with this template
 :-------------------------:|:-------------------------:
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png)  |  ![](https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif)
+![](https://media.giphy.com/media/PgKc6XWRjJ4GgkAevA/giphy.gif)  |  ![](https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif)
 
 My custom config template for react-projects without create-react-app or react-scripts
 
