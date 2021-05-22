@@ -1,6 +1,8 @@
 # react-project
 
-![Drag Racing](https://fyndx.io/images/fyndx-logo.svg)
+react-project             |  developer
+:-------------------------:|:-------------------------:
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png)  |  ![](https://fyndx.io/images/fyndx-logo.svg)
 
 My custom config template for react-projects without create-react-app or react-scripts
 
