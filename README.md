@@ -1,4 +1,7 @@
 # react-project
+
+![Drag Racing](https://fyndx.io/images/fyndx-logo.svg)
+
 My custom config template for react-projects without create-react-app or react-scripts
 
 [Repo-link](https://github.com/EvgenyLeukhin/react-project)
