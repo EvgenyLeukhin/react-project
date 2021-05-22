@@ -28,6 +28,8 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
       Styles: path.resolve(__dirname, 'src', 'assets', 'css'),
+      Images: path.resolve(__dirname, 'src', 'assets', 'images'),
+      Icons: path.resolve(__dirname, 'src', 'assets', 'icons'),
     },
   },
 
@@ -48,6 +50,22 @@ module.exports = {
       },
 
       // IMAGES
+      {
+        test: /\.(png|jp(e*)g|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8000,
+              name: 'img/[name]-[hash:12].[ext]'
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: { bypassOnDebug: true }
+          },
+        ]
+      },
 
       // FONTS
       {
