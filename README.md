@@ -26,7 +26,9 @@ Run webpack-dev-server with hot-reloading
 
 ## ESLint
 ```eslint someFile.jsx``` - Check some file
+
 ```npm run eslint-find``` - Check all files inside src/ directory
+
 ```npm run eslint-fix``` - Fix all warnings inside src/ directory
 
 ***
