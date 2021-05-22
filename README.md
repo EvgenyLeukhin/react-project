@@ -1,7 +1,7 @@
 # react-project
 My custom config template for react-projects without create-react-app or react-scripts
 
-[Repo-link](https://github.com/EvgenyLeukhin/)
+[Repo-link](https://github.com/EvgenyLeukhin/react-project)
 
 [Demo-link](http://evgenyleukhin.github.io/react-project/)
 ***
