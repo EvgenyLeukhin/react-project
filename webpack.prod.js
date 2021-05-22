@@ -34,24 +34,22 @@ module.exports = {
   // FILES
   module: {
     rules: [
+      // JS
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: 'babel-loader',
       },
+
+      // CSS
       {
         test: /\.(sa|sc|c)ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
-      {
-        test: /\.(eot|ttf|woff|woff2)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: { name: 'fonts/[name].[ext]' }
-          }
-        ]
-      },
+
+      // IMAGES
+
+      // FONTS
       {
         test: /\.(eot|ttf|woff|woff2)$/,
         use: [
