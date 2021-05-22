@@ -2,11 +2,9 @@
 
 react-project             |  developer
 :-------------------------:|:-------------------------:
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png)  |  ![](https://fyndx.io/images/fyndx-logo.svg)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png)  |  ![](https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif)
 
 My custom config template for react-projects without create-react-app or react-scripts
-
-<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/o0vwzuFwCGAFO" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/cat-hacker-webs-o0vwzuFwCGAFO">via GIPHY</a></p>
 
 [Repo-link](https://github.com/EvgenyLeukhin/react-project)
 
