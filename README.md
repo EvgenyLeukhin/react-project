@@ -1,5 +1,5 @@
 # react-project
-My custom template for react projects withou create-react-app or react-scripts
+My custom config template for react-projects without create-react-app or react-scripts
 
 [Repo-link](https://github.com/EvgenyLeukhin/)
 
