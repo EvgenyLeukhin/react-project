@@ -88,11 +88,11 @@ Run webpack-dev-server with hot-reloading
 ### Redux and API
 ```...``` later
 
-### Styles
+### Styles 
 ```autoprefixer, css-loader, css-minimizer-webpack-plugin, cssnano, mini-css-extract-plugin, postcss-loader, sass, sass-loader, style-loader```
 
 ### Images
-```...``` later
+```image-webpack-loader, url-loader```
 
 ### Fonts, files
 ```file-loader```
@@ -102,3 +102,6 @@ Run webpack-dev-server with hot-reloading
 
 ### Demo
 ```gh-pages```
+
+* Webpack aliases doesn't work
+* Ts errors when image imports
