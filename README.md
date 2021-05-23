@@ -1,4 +1,4 @@
-# react-project
+# react-project (TypeScript in progress)
 
 without this template      |  with this template
 :-------------------------:|:-------------------------:
