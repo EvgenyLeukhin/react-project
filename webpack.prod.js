@@ -9,7 +9,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const paths = {
-  SRC: path.resolve(__dirname, 'src/App.tsx'),
+  SRC: path.resolve(__dirname, 'src/App.jsx'),
   DIST: path.resolve(__dirname, 'dist'),
 };
 
@@ -25,11 +25,13 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
     alias: {
+      Components: path.resolve(__dirname, 'src', 'components'),
       Styles: path.resolve(__dirname, 'src', 'assets', 'css'),
       Images: path.resolve(__dirname, 'src', 'assets', 'images'),
       Icons: path.resolve(__dirname, 'src', 'assets', 'icons'),
+      Fonts: path.resolve(__dirname, 'src', 'assets', 'fonts'),
     },
   },
 
@@ -57,7 +59,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8000,
-              name: 'img/[name]-[hash:12].[ext]'
+              name: 'assets/img/[name]-[hash:12].[ext]'
             }
           },
           {
@@ -73,7 +75,7 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: { name: 'fonts/[name].[ext]' }
+            options: { name: 'assets/fonts/[name].[ext]' }
           }
         ]
       },

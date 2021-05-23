@@ -6,6 +6,9 @@ without this template      |  with this template
 
 My custom config template for react-projects without create-react-app or react-scripts
 
+* with **React and propTypes** - ```jsx``` branch (```git checkout jsx```)
+* with **React and TypeScript** - ```tsx``` branch (```git checkout tsx```)
+
 [Repo-link](https://github.com/EvgenyLeukhin/react-project)
 
 [Demo-link](http://evgenyleukhin.github.io/react-project/)
@@ -48,14 +51,11 @@ Run webpack-dev-server with hot-reloading
 ```webpackbar, html-webpack-plugin, compression-webpack-plugin, clean-webpack-plugin```
 
 ### Babel
-```@babel/core, @babel/preset-env, @babel/preset-react, @babel/preset-typescript, babel-loader```
-
-### TypeScript
-```typescript, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @types/react, @types/react-dom```
+```@babel/core, @babel/preset-env, @babel/preset-react, babel-loader```
 
 ### ESLint
 
-```eslint, eslint-config-airbnb, eslint-import-resolver-typescript, eslint-plugin-import, eslint-plugin-jsx-a11y, eslint-plugin-react, eslint-plugin-react-hooks, eslint-webpack-plugin, @typescript-eslint/eslint-plugin, @typescript-eslint/parser```
+```eslint, eslint-config-airbnb, eslint-plugin-import, eslint-plugin-jsx-a11y, eslint-plugin-react, eslint-plugin-react-hooks, eslint-webpack-plugin```
 
 ```npm i -g eslint```
 ```npm i --save-dev eslint```
@@ -64,7 +64,7 @@ Run webpack-dev-server with hot-reloading
 * To check syntax, find problems, and enforce code style 
 * JavaScript modules 
 * React 
-* TypeScript - Yes 
+* TypeScript - No 
 * Browser 
 * Popular -> Airbnb -> json;
 
@@ -102,6 +102,3 @@ Run webpack-dev-server with hot-reloading
 
 ### Demo
 ```gh-pages```
-
-* Webpack aliases doesn't work
-* Ts errors when image imports

@@ -1,8 +1,7 @@
 {
   "presets": [
      [ "@babel/preset-env", { "debug": true } ],
-    "@babel/preset-react",
-    "@babel/preset-typescript"
+    "@babel/preset-react"
   ],
   "ignore": [
     "/node_modules/"
