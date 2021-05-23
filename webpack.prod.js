@@ -98,7 +98,7 @@ module.exports = {
     new CompressionPlugin({ algorithm: 'gzip' }),
     new HtmlWebpackPlugin({
       title: 'React project',
-      template: 'src/index.html',
+      template: 'src/assets/index.html',
       filename: 'index.html',
       inject: 'body', // head
     }),
