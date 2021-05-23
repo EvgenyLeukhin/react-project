@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 418:
 /***/ ((module) => {
 
+"use strict";
 /*
 object-assign
 (c) Sindre Sorhus
@@ -99,9 +99,121 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 /***/ }),
 
+/***/ 703:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = __webpack_require__(414);
+
+function emptyFunction() {}
+function emptyFunctionWithReset() {}
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+module.exports = function() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      // It is still safe when called from React.
+      return;
+    }
+    var err = new Error(
+      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+      'Use PropTypes.checkPropTypes() to call them. ' +
+      'Read more at http://fb.me/use-check-prop-types'
+    );
+    err.name = 'Invariant Violation';
+    throw err;
+  };
+  shim.isRequired = shim;
+  function getShim() {
+    return shim;
+  };
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+
+/***/ }),
+
+/***/ 697:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (false) { var throwOnDirectAccess, ReactIs; } else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(703)();
+}
+
+
+/***/ }),
+
+/***/ 414:
+/***/ ((module) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+
 /***/ 448:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 /** @license React v17.0.2
  * react-dom.production.min.js
  *
@@ -406,6 +518,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!rk(c))throw Er
 /***/ 935:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 function checkDCE() {
@@ -440,6 +553,7 @@ if (true) {
 /***/ 408:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 /** @license React v17.0.2
  * react.production.min.js
  *
@@ -470,6 +584,7 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 /***/ 294:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 if (true) {
@@ -482,6 +597,7 @@ if (true) {
 /***/ 53:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 /** @license React v0.20.2
  * scheduler.production.min.js
  *
@@ -509,6 +625,7 @@ exports.unstable_wrapCallback=function(a){var b=P;return function(){var c=P;P=b;
 /***/ 840:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 if (true) {
@@ -545,6 +662,35 @@ if (true) {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
 /******/ 		__webpack_require__.p = "";
@@ -552,8 +698,9 @@ if (true) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 
 // UNUSED EXPORTS: default
 
@@ -561,28 +708,67 @@ var __webpack_exports__ = {};
 var react = __webpack_require__(294);
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
 var react_dom = __webpack_require__(935);
-;// CONCATENATED MODULE: ./src/components/Title/index.tsx
+;// CONCATENATED MODULE: ./src/assets/images/react-logo.png
+/* harmony default export */ const react_logo = (__webpack_require__.p + "assets/img/react-logo-3d6c61eadb77.png");
+;// CONCATENATED MODULE: ./src/assets/icons/react-logo.svg
+/* harmony default export */ const icons_react_logo = ("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xOC42OTcgMTkuNDg3Yy0yLjY4NCAwLTYuMjQ2LTEuMjIxLTkuMzM4LTIuOTctNC4xOC0yLjM2NS03LjMwOS01LjQ4OS03Ljk3MS03Ljk1OS0uMzEtMS4xNTYtLjA0LTEuOTY4LjI0Mi0yLjQ0NSAxLjcxOC0yLjkxOCA3Ljk4Ni0xLjQ3MiAxMy4wMSAxLjM3MSA0LjE4IDIuMzY1IDcuMzA5IDUuNDg5IDcuOTcxIDcuOTU5LjMxIDEuMTU2LjA0IDEuOTY4LS4yNDIgMi40NDUtLjY2MSAxLjEyMi0xLjk5NCAxLjU5OS0zLjY3MiAxLjU5OXpNNS4yOTkgNi40OThjLTEuOTU5IDAtMi4yMDguNjg2LTEuOTc5IDEuNTQyLjQyIDEuNTY4IDIuNzk3IDQuMzQ1IDcuMDIzIDYuNzM3IDUuMjgzIDIuOTg5IDkuNjMxIDMuMjM4IDEwLjMwMiAyLjA5Ni4xMjYtLjIxNC4xMzgtLjUyMS4wMzMtLjkxMi0uNDItMS41NjgtMi43OTctNC4zNDUtNy4wMjMtNi43MzctMy40MjgtMS45NC02LjQ2NC0yLjcyNi04LjM1Ni0yLjcyNnoiIGZpbGw9IiMwMDk3YTciLz48cGF0aCBkPSJNMTQgMTJhMiAyIDAgMTEtNC4wMDEtLjAwMUEyIDIgMCAwMTE0IDEyeiIgZmlsbD0iIzYwN2Q4YiIvPjxwYXRoIGQ9Ik0xMiAyNGMtMy4yODMgMC01LTYuMDM3LTUtMTJTOC43MTcgMCAxMiAwczUgNi4wMzcgNSAxMi0xLjcxNyAxMi01IDEyem0wLTIyYy0xLjE5NCAwLTMgMy45ODgtMyAxMHMxLjgwNiAxMCAzIDEwIDMtMy45ODggMy0xMC0xLjgwNi0xMC0zLTEweiIgZmlsbD0iIzAwYmNkNCIvPjxwYXRoIGQ9Ik0xNC4xNCA1LjM2Yy0uNzEuMjItMS40My41LTIuMTQuODEuODIuMzUgMS42My43NSAyLjQyIDEuMTlsLjE4LS4wNmMtLjEzLS43MS0uMjktMS4zNi0uNDYtMS45NHptOC4yMy43NWMtLjk4LTEuNjYtMy40My0xLjkxLTYuMjktMS4yOC4xOC42MS4zMyAxLjI2LjQ1IDEuOTMuODMtLjE4IDEuNTYtLjI2IDIuMTctLjI2IDIuMDE0IDAgMi4xODcuNzMyIDEuOTggMS41NC0uMTguNjctLjcyIDEuNTctMS42MSAyLjU3LTEuODA0IDEuOTgtNC41ODcgMy44ODEtNy4wNyA1LjAzLjg1LjQxIDEuNjYuNzQgMi40MiAxIDEuNjUtLjk0NCA0LjAwMS0yLjM3NCA2LjA3LTQuNjQgMS4wOS0xLjE5IDEuODQtMi4zNyAyLjEyLTMuNDQuMjMxLS44NTMuMTkzLTEuNjk3LS4yNC0yLjQ1ek0xNC42IDcuM2MtLjEzLS43MS0uMjktMS4zNi0uNDYtMS45NC0uNzEuMjItMS40My41LTIuMTQuODEuODIuMzUgMS42My43NSAyLjQyIDEuMTl6bS01LjIgOS40Yy4xMy43MS4yOSAxLjM3LjQ2IDEuOTUuNzEtLjIzIDEuNDMtLjUgMi4xNC0uODEtLjgyLS4zNi0xLjY0LS43Ni0yLjQyLTEuMnpNNi4zNiAxMkEyNS4xMzUgMjUuMTM1IDAgMDExMiA4LjM2Yy0uODUtLjQxLTEuNjYtLjc0LTIuNDItMS0xLjY1Ljk0NC0zLjEyNyAxLjg4Ny00LjY1IDMuMjUtMS4zNjYgMS4xODYtMy4wNzkgMy4wNjctMy41NCA0LjgzLS41NzYgMi4xNTMuNjM2IDQuMDUgMy45MSA0LjA1LjgxIDAgMS42OS0uMTEgMi42Mi0uMzItLjE4LS42MS0uMzMtMS4yNi0uNDUtMS45My0xLjg4LjQtNC42My41OTMtNC4xNS0xLjI4LjM4Mi0xLjQyMyAxLjk0NS0yLjk4NyAzLjA0LTMuOTZ6IiBmaWxsPSIjNGRkMGUxIi8+PHBhdGggZD0iTTkuMDY5IDE0LjAwOWMuMDYzLjkwMS4xNjcgMS43NDIuMzAxIDIuNTE0bC4yMS4xMTdoLjAwMWMuNzg2LjQzNSAxLjU5OS44MzUgMi40MTkgMS4xOXYtMi4xODlhMjcuMzc4IDI3LjM3OCAwIDAxLTIuOTMxLTEuNjMyem0tMi43MDUtMi4wMTJMNi4zNiAxMmMtLjQzNi4zODgtLjk0Ny44Ny0xLjQyOCAxLjM5OS42NzIuNTkzIDEuNDIgMS4xNzggMi4yMjggMS43MzlhMzAuMTYgMzAuMTYgMCAwMS0uMTU2LTIuNjA2IDIwLjUzNiAyMC41MzYgMCAwMS0uNjQtLjUzNXptMy40OTQtNi42NDJhMTguNjU2IDE4LjY1NiAwIDAwLS40NTUgMS45NEEyMi43MjcgMjIuNzI3IDAgMDExMiA4LjM1OVY2LjE3YTI0Ljk1NSAyNC45NTUgMCAwMC0yLjE0Mi0uODE1em0tNC41NTYtLjg0MmMtMS42NzcgMC0zLjAxMS40NzctMy42NzIgMS41OTktLjI4MS40NzctLjU1MSAxLjI4OS0uMjQxIDIuNDQ1LjI4NSAxLjA2NCAxLjAyOCAyLjI1IDIuMTE2IDMuNDQ0LjQ3NC0uNTIxLjk2OS0uOTk1IDEuNDI2LTEuMzkxbC4wMDctLjAwNkM0LjA0MyA5LjYxIDMuNTAxIDguNzEzIDMuMzIxIDguMDRjLS4yMy0uODU1LjAyLTEuNTQyIDEuOTc5LTEuNTQyLjYxMSAwIDEuMzQxLjA4MiAyLjE2NC4yNTguMTI2LS42NzUuMjc4LTEuMzIyLjQ1NS0xLjkzMi0uOTI3LS4yMDEtMS44MTEtLjMxMS0yLjYxNy0uMzExeiIgZmlsbD0iIzAwODM5MSIvPjxwYXRoIGQ9Ik0xMiAxMGEyIDIgMCAwMDAgNHoiIGZpbGw9IiM1NDZkNzkiLz48cGF0aCBkPSJNOS4wNyA5Ljk4M2MtLjcwMy40NTQtMS4zOTguOTUxLTIuMDY1IDEuNDg0YTMxLjU3IDMxLjU3IDAgMDAwIDEuMDY1Yy4wMTUuODc3LjA2NyAxLjc1Mi4xNTYgMi42MDYuMDc1LjcyMS4xNzYgMS40MjYuMzAzIDIuMTA0bC4wMDYtLjAwMWMuMTIuNjcuMjcxIDEuMzIuNDUgMS45M2gtLjAwMkM4Ljc0MSAyMi4wMDMgMTAuMTEyIDI0IDEyIDI0di0yYy0uNzY5IDAtMS43OTItMS42NTQtMi40MjItNC40MzdBMTguNzA3IDE4LjcwNyAwIDAxOS40IDE2LjdoLjAwMmEyNC44ODIgMjQuODgyIDAgMDEtLjMzMi0yLjY5MSAyOC44OTMgMjguODkzIDAgMDEwLTQuMDI2ek0xMiAwYy0xLjg4NyAwLTMuMjU3IDEuOTk1LTQuMDgxIDQuODI0LS4xNzcuNjEtLjMyOSAxLjI1Ny0uNDU1IDEuOTMyYTI2LjE1NyAyNi4xNTcgMCAwMC0uMzAzIDIuMTA0QTMyLjQyNSAzMi40MjUgMCAwMTkuMzcgNy40ODFhMTguOTE2IDE4LjkxNiAwIDAxLjQ4OC0yLjEyNkMxMC40ODQgMy4yMzEgMTEuMzM3IDIgMTIgMnoiIGZpbGw9IiMwMGE0YjkiLz48cGF0aCBkPSJNOS41OCAxNi42NGwtLjE3OC4wNkg5LjRhMjAuMTMyIDIwLjEzMiAwIDAwLjQ2IDEuOTVjLjcxLS4yMyAxLjQzLS41IDIuMTQtLjgxLS44Mi0uMzYtMS42NC0uNzYtMi40Mi0xLjJ6bTAtOS4yOGMtLjA3LjA0LS4xNDEuMDgtLjIxLjEyMS0uNzY1LjQ0MS0xLjQ5NC44ODctMi4yMDkgMS4zNzlhMjEuOTUzIDIxLjk1MyAwIDAwLTIuMjIzIDEuNzQ0bC0uMDA3LjAwNmMtLjQ1Ni4zOTYtLjk1MS44Ny0xLjQyNiAxLjM5MS0uOTQ2IDEuMDM5LTEuODA4IDIuMjY1LTIuMTE1IDMuNDM5LS41NzYgMi4xNTMuNjM2IDQuMDUgMy45MSA0LjA1LjgwOSAwIDEuNjg5LS4xMSAyLjYxOC0uMzJoLjAwMmMtLjE4LS42MS0uMzMtMS4yNi0uNDUtMS45M2wtLjAwNi4wMDFjLS42ODYuMTQ2LTEuNDg4LjI2NC0yLjIwNS4yNjQtMS4yNDggMC0yLjI0My0uMzU3LTEuOTM4LTEuNTQ1LjIzLS44NTYuODg3LTEuNzYyIDEuNjEyLTIuNTYxLjQ4LS41MjkuOTktMS4wMTEgMS40MjctMS4zOTlsLjAwNC0uMDAzQTI1LjU3IDI1LjU3IDAgMDE5LjA3IDkuOTgzIDI0LjE2NCAyNC4xNjQgMCAwMTEyIDguMzZhMjMuODI2IDIzLjgyNiAwIDAwLTEuNDQ1LS42MzggMjAuMTc3IDIwLjE3NyAwIDAwLS45NzUtLjM2MnoiIGZpbGw9IiM0M2I1YzQiLz48L3N2Zz4=");
+;// CONCATENATED MODULE: ./src/assets/fonts/Alice-Regular.ttf
+/* harmony default export */ const Alice_Regular = (__webpack_require__.p + "assets/fonts/Alice-Regular.ttf");
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__(697);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+;// CONCATENATED MODULE: ./src/components/Header/index.jsx
 
 
-const BackButton = ({
+
+const Header = ({
   titleText,
   style
 }) => /*#__PURE__*/react.createElement("h1", {
   style: style
 }, titleText);
 
-/* harmony default export */ const Title = (BackButton);
-;// CONCATENATED MODULE: ./src/assets/fonts/Alice-Regular.ttf
-/* harmony default export */ const Alice_Regular = (__webpack_require__.p + "fonts/Alice-Regular.ttf");
-;// CONCATENATED MODULE: ./src/App.tsx
+Header.propTypes = {
+  titleText: (prop_types_default()).string.isRequired,
+  style: prop_types_default().objectOf((prop_types_default()).string)
+};
+Header.defaultProps = {
+  style: {
+    backgroundColor: 'gray',
+    color: 'black',
+    textAlign: 'center'
+  }
+};
+/* harmony default export */ const components_Header = (Header);
+;// CONCATENATED MODULE: ./src/components/ReactLogo/index.jsx
 
 
- // STYLES
-// import global css file
+const ReactLogoSvg = () => /*#__PURE__*/react.createElement("svg", {
+  viewBox: "0 0 841.9 595.3"
+}, /*#__PURE__*/react.createElement("g", {
+  fill: "#61DAFB"
+}, /*#__PURE__*/react.createElement("path", {
+  d: "M666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9V78c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6V78.5c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zM421.2 430c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24 4.7 8 9.5 15.8 14.4 23.4zM420.7 163c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6 0-15.7 22.9-35.6 58.3-50.6 8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zM310 490c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6zM320.8 78.4z"
+}), /*#__PURE__*/react.createElement("circle", {
+  cx: "420.9",
+  cy: "296.5",
+  r: "45.7"
+}), /*#__PURE__*/react.createElement("path", {
+  d: "M520.5 78.1z"
+})));
 
- // import global scss-file
+/* harmony default export */ const ReactLogo = (ReactLogoSvg);
+;// CONCATENATED MODULE: ./src/App.jsx
+
+ // IMAGES
+
 
  // FONSTS
+
+ // STYLES
+
+ // COMPONENTS
+
 
  // in js styles
 
@@ -594,10 +780,40 @@ const styles = {
 
 const App = () => /*#__PURE__*/react.createElement("div", {
   className: "app-container"
-}, /*#__PURE__*/react.createElement(Title, {
+}, /*#__PURE__*/react.createElement(components_Header, {
   titleText: "Hello, TypeScript!",
   style: styles
-}), /*#__PURE__*/react.createElement("h2", null, "Custom font loading"), /*#__PURE__*/react.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit."), /*#__PURE__*/react.createElement("p", null, "Expedita porro molestias harum, ullam nisi in praesentium itaque."), /*#__PURE__*/react.createElement("p", null, "Voluptates, ipsam corporis? Error earum deserunt esse alias."));
+}), /*#__PURE__*/react.createElement("main", null, /*#__PURE__*/react.createElement("section", null, /*#__PURE__*/react.createElement("h2", null, "Custom font loading"), /*#__PURE__*/react.createElement("p", {
+  className: "custom-font"
+}, /*#__PURE__*/react.createElement("b", null, "Alice, serif: "), "Lorem ipsum dolor sit amet consectetur adipisicing elit."), /*#__PURE__*/react.createElement("p", null, /*#__PURE__*/react.createElement("b", null, "System font: "), "Expedita porro molestias harum, ullam nisi in praesentium itaque.")), /*#__PURE__*/react.createElement("section", null, /*#__PURE__*/react.createElement("h2", null, "Images loading"), /*#__PURE__*/react.createElement("div", {
+  className: "images-container"
+}, /*#__PURE__*/react.createElement("div", {
+  className: "image-item"
+}, /*#__PURE__*/react.createElement("h3", null, "Image tag"), /*#__PURE__*/react.createElement("img", {
+  className: "image",
+  src: react_logo,
+  alt: "react-logo.png"
+})), /*#__PURE__*/react.createElement("div", {
+  className: "image-item bg",
+  style: {
+    backgroundImage: `url(${react_logo})`
+  }
+}, /*#__PURE__*/react.createElement("h3", null, "Bg-image")))), /*#__PURE__*/react.createElement("section", null, /*#__PURE__*/react.createElement("h2", null, "Svg loading (with base64)"), /*#__PURE__*/react.createElement("div", {
+  className: "images-container"
+}, /*#__PURE__*/react.createElement("div", {
+  className: "image-item"
+}, /*#__PURE__*/react.createElement("h3", null, "Inline svg"), /*#__PURE__*/react.createElement(ReactLogo, null)), /*#__PURE__*/react.createElement("div", {
+  className: "image-item"
+}, /*#__PURE__*/react.createElement("h3", null, "Svg inside img tag"), /*#__PURE__*/react.createElement("img", {
+  className: "image",
+  src: icons_react_logo,
+  alt: "react-logo.svg"
+})), /*#__PURE__*/react.createElement("div", {
+  className: "image-item bg",
+  style: {
+    backgroundImage: `url(${icons_react_logo})`
+  }
+}, /*#__PURE__*/react.createElement("h3", null, "Svg like bg-image"))))));
 
 react_dom.render( /*#__PURE__*/react.createElement(App, null), document.getElementById('root'));
 /* harmony default export */ const src_App = ((/* unused pure expression or super */ null && (App)));
