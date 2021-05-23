@@ -87,7 +87,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'React project - Development',
       favicon: 'src/assets/icons/favicon.ico',
-      template: 'src/assets/index.html',
+      template: 'src/index.html',
       filename: 'index.html',
       inject: 'body', // head
     }),
