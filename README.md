@@ -7,7 +7,7 @@ without this template      |  with this template
 My custom config template for react-projects without create-react-app or react-scripts
 
 * with **React and propTypes** - ```jsx``` branch (```git checkout jsx```)
-* with **React and TypeScript** - ```tsx``` branch (```git checkout tsx```)
+* with **React and TypeScript** - ```tsx``` branch (```git checkout tsx```) - in progress
 
 [Repo-link](https://github.com/EvgenyLeukhin/react-project)
 
@@ -20,8 +20,7 @@ My custom config template for react-projects without create-react-app or react-s
 ```yarn install || yarn```
 ***
 ## Start development
-Run webpack-dev-server with hot-reloading
-```npm start || yarn start```
+```npm start || yarn start``` - Run webpack-dev-server with hot-reloading
 ***
 ## Build for production
 ```npm run build || yarn build```

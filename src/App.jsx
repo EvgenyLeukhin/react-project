@@ -24,7 +24,7 @@ const styles = {
 
 const App = () => (
   <div className="app-container">
-    <Header titleText="Hello, TypeScript!" style={styles} />
+    <Header titleText="React + propTypes!" style={styles} color="darkcyan" />
 
     <main>
       <section>

@@ -1,12 +1,13 @@
 // IMPORTS FOR PRODUCTION
 const path = require('path');
 
-const WebpackBar = require('webpackbar');
+const WebpackBar             = require('webpackbar');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const HtmlWebpackPlugin      = require('html-webpack-plugin');
+const CompressionPlugin      = require('compression-webpack-plugin');
+const MiniCssExtractPlugin   = require('mini-css-extract-plugin');
+const CssMinimizerPlugin     = require('css-minimizer-webpack-plugin');
+const FaviconsWebpackPlugin  = require('favicons-webpack-plugin');
 
 const paths = {
   SRC: path.resolve(__dirname, 'src/App.jsx'),
@@ -103,5 +104,13 @@ module.exports = {
     }),
      // css bundle
     new MiniCssExtractPlugin({ filename: 'bundle-[hash:8].css' }),
+
+    // favicons
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/images/react-logo.png',
+      prefix: 'assets/icons-[hash:8]/',
+      statsFilename: 'iconstats-[hash:8].json',
+      background: '#fff'
+    }),
   ],
 };
