@@ -723,13 +723,20 @@ var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 const Header = ({
   titleText,
-  style
+  style,
+  color
 }) => /*#__PURE__*/react.createElement("h1", {
   style: style
-}, titleText);
+}, "Hello,\xA0", /*#__PURE__*/react.createElement("span", {
+  style: {
+    color
+  }
+}, titleText)); // props checking
+
 
 Header.propTypes = {
   titleText: (prop_types_default()).string.isRequired,
+  color: (prop_types_default()).string,
   style: prop_types_default().objectOf((prop_types_default()).string)
 };
 Header.defaultProps = {
@@ -737,7 +744,8 @@ Header.defaultProps = {
     backgroundColor: 'gray',
     color: 'black',
     textAlign: 'center'
-  }
+  },
+  color: 'black'
 };
 /* harmony default export */ const components_Header = (Header);
 ;// CONCATENATED MODULE: ./src/components/ReactLogo/index.jsx
@@ -781,8 +789,9 @@ const styles = {
 const App = () => /*#__PURE__*/react.createElement("div", {
   className: "app-container"
 }, /*#__PURE__*/react.createElement(components_Header, {
-  titleText: "Hello, TypeScript!",
-  style: styles
+  titleText: "React + propTypes!",
+  style: styles,
+  color: "darkcyan"
 }), /*#__PURE__*/react.createElement("main", null, /*#__PURE__*/react.createElement("section", null, /*#__PURE__*/react.createElement("h2", null, "Custom font loading"), /*#__PURE__*/react.createElement("p", {
   className: "custom-font"
 }, /*#__PURE__*/react.createElement("b", null, "Alice, serif: "), "Lorem ipsum dolor sit amet consectetur adipisicing elit."), /*#__PURE__*/react.createElement("p", null, /*#__PURE__*/react.createElement("b", null, "System font: "), "Expedita porro molestias harum, ullam nisi in praesentium itaque.")), /*#__PURE__*/react.createElement("section", null, /*#__PURE__*/react.createElement("h2", null, "Images loading"), /*#__PURE__*/react.createElement("div", {
